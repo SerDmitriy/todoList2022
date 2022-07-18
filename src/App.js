@@ -1,20 +1,21 @@
-import { useState } from "react"
+import { useState } from "react";
 import './App.css';
 
 function App() {
 
-  const [value, setValue] = useState("")
-  const [list, setList] = useState([])
+  const [value, setValue] = useState("");
+  const [list, setList] = useState([]);
 
   const addTodo = () => {
+    if (!value) return;
     const newTodo = value;
-    setValue("")
-    setList([...list, newTodo])
+    setValue("");
+    setList([...list, newTodo]);
   }
 
   const deleteItem = (index) => {
-    const newList = list.filter((e, i) => i !== index)
-    setList(newList)
+    const newList = list.filter((e, i) => i !== index);
+    setList(newList);
   }
 
 
